@@ -24,15 +24,6 @@ use config\request;
 request::config([
     'app'               => 'resource/config/app.php', // file route app
     'key'               => 'AnoOnion', // key url
-    'session'           => 'true', // set session
-    'custom_request'    => 'halo', // custom request hook
-
-    'db' => [
-        'url'   => 'localhost',
-        'user'  => 'root',
-        'pass'  => '',
-        'db'    => 'db_telegram'
-    ],
 
     'telegram' => [
         'key' => '23214619846397409327940' // token telegram bot
@@ -44,7 +35,7 @@ request::config([
 ```php
 <?php
 
-use component\bot       as App;
+use component\bot as App;
 
 App::get('halo', function ($bot) {
     $bot->send('halo juga');
@@ -53,7 +44,7 @@ App::get('halo', function ($bot) {
 
 **4. Set webhook telegram ke file library tersebut**
 ```
-https://api.telegram.org/bot [TOKEN_TELEGRAM] /setWebhook?url= [DOMAIN]/main.php
+https://api.telegram.org/bot[TOKEN_TELEGRAM]/setWebhook?url=[DOMAIN]/main.php
 ```
 
 ### Author
